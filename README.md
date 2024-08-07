@@ -54,6 +54,10 @@ PRONTO Schematization: given a pair representing a containment in a reference ta
 
 	```
 
+*Note*: we noticed that results may slightly vary according to the underlying
+hardware architecture. Our experiments were run on a NVIDIA GeForce RTX 3090
+(24GB), Intel(R) Core(TM) i7-5820K CPU @ 3.30GHz.
+
 
 ### Script Arguments
 
