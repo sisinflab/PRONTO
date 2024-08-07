@@ -9,10 +9,10 @@ def compute_metrics(y_true: np.ndarray, y_pred: np.ndarray):
     y_labels = (y_pred > 0.5).astype(int)
     accuracy = sum(y_labels == y_true) / len(y_true) * 100
     tn, fp, fn, tp = skm.confusion_matrix(y_true, y_labels).ravel()
-    precision = tp/(tp + fp)
-    recall = tp/(tp + fn)
+    precision = tp/(tp + fp + 1e-7)
+    recall = tp/(tp + fn + 1e-7)
 
-    f1_score = (2 * precision * recall) / (precision + recall)
+    f1_score = (2 * precision * recall) / (precision + recall + 1e-7)
     roc_auc = skm.roc_auc_score(y_true, y_pred)
     result = {
         "Accuracy": accuracy,
